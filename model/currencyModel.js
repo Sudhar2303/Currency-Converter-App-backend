@@ -1,7 +1,15 @@
 const mongoose = require('mongoose')
 const currencyModel = mongoose.Schema(
     {
-        code :
+        image :
+        {
+            type: String
+        },
+        countryName :
+        {
+            type:String
+        },
+        countryCode :
         {
             type : String,
             required : true,

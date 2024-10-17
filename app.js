@@ -4,6 +4,7 @@ const cors = require('cors')
 const app = express()
 const route = require('./Routers/currencyRoute')
 const mongoose = require('mongoose')
+const path = require('path')
 
 const PORT = process.env.PORT || 3500
 
@@ -16,6 +17,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/v1/currency',route)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 mongoose.connect(process.env.DB_URL)
 const DB = mongoose.connection
